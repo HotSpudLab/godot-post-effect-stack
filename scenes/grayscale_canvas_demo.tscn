@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://btwyutimfnee2"]
+
+[ext_resource type="Script" uid="uid://do8m0f4ng8d1s" path="res://addons/post_effect_resource/canvas_post_effect.gd" id="1_canvas"]
+[ext_resource type="Shader" uid="uid://d1xsxh48jkg7w" path="res://effects/grayscale/grayscale_canvas.gdshader" id="2_shader"]
+
+[sub_resource type="Environment" id="Environment_0y7lm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo7ya"]
+albedo_color = Color(0, 1, 0.2833333, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grayscale"]
+shader = ExtResource("2_shader")
+
+[node name="DemoScene" type="Node3D" unique_id=1115382823]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=214575973]
+environment = SubResource("Environment_0y7lm")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=656467874]
+transform = Transform3D(0.8834104, -0.19274406, 0.427125, 0, 0.9114915, 0.41131887, -0.4686001, -0.36336336, 0.8052211, 0.9291299, 0.9033156, 2.099809)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1225678660]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1564074223]
+material = SubResource("StandardMaterial3D_bo7ya")
+
+[node name="CanvasPostEffect" type="CanvasLayer" parent="." unique_id=1130523739]
+layer = 128
+script = ExtResource("1_canvas")
+effect_material = SubResource("ShaderMaterial_grayscale")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasPostEffect" unique_id=758384534]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

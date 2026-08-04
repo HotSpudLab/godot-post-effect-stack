@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://brt7jmweqnopt"]
+
+[ext_resource type="Script" uid="uid://bo2a5p43aeq53" path="res://demo/stack_demo.gd" id="1_5c3e7"]
+[ext_resource type="Resource" uid="uid://bxcl2vndsn5nt" path="res://demo/effect_stack.tres" id="2_1a4b6"]
+[ext_resource type="Script" uid="uid://kan7x2uqabnw" path="res://addons/post_effect_resource/effect_stack_runner.gd" id="3_j6k4p"]
+
+[sub_resource type="Environment" id="Environment_7m2n8"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_4p9q2"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("3_j6k4p")
+stack_resource = ExtResource("2_1a4b6")
+
+[sub_resource type="Compositor" id="Compositor_3r5s1"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_4p9q2")])
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8t6u4"]
+albedo_color = Color(0, 1, 0.2833333, 1)
+
+[node name="StackDemo" type="Node3D" unique_id=1678911978]
+script = ExtResource("1_5c3e7")
+stack_resource = ExtResource("2_1a4b6")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2000000001]
+environment = SubResource("Environment_7m2n8")
+compositor = SubResource("Compositor_3r5s1")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2000000002]
+transform = Transform3D(0.8834104, -0.19274406, 0.427125, 0, 0.9114915, 0.41131887, -0.4686001, -0.36336336, 0.8052211, 0.9291299, 0.9033156, 2.099809)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2000000003]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2000000004]
+material = SubResource("StandardMaterial3D_8t6u4")

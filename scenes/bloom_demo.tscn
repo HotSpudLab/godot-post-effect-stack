@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://ehpliocn58pd"]
+
+[ext_resource type="Resource" uid="uid://b7ngfjnx1qawp" path="res://effects/bloom/bloom.tres" id="1_2b4c6"]
+[ext_resource type="Script" path="res://addons/post_effect_resource/effect_stack_runner.gd" id="2_5e8d1"]
+[ext_resource type="Script" path="res://addons/post_effect_resource/effect_stack_resource.gd" id="3_stack"]
+[ext_resource type="Script" path="res://addons/post_effect_resource/post_effect_resource.gd" id="4_base"]
+
+[sub_resource type="Resource" id="Resource_bloom_stack"]
+script = ExtResource("3_stack")
+effects = Array[ExtResource("4_base")]([ExtResource("1_2b4c6")])
+
+[sub_resource type="Environment" id="Environment_0y7lm"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_hro3w"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+needs_normal_roughness = false
+script = ExtResource("2_5e8d1")
+stack_resource = SubResource("Resource_bloom_stack")
+
+[sub_resource type="Compositor" id="Compositor_te36y"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_hro3w")])
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dark"]
+albedo_color = Color(0.1, 0.1, 0.1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_emissive"]
+emission_enabled = true
+emission = Color(1, 0.5, 0, 1)
+emission_energy_multiplier = 2.0
+
+[node name="DemoScene" type="Node3D" unique_id=568931758]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2040256825]
+environment = SubResource("Environment_0y7lm")
+compositor = SubResource("Compositor_te36y")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1577595802]
+transform = Transform3D(0.8834104, -0.19274406, 0.427125, 0, 0.9114915, 0.41131887, -0.4686001, -0.36336336, 0.8052211, 0.9291299, 0.9033156, 2.099809)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=493206898]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1424398945]
+material = SubResource("StandardMaterial3D_dark")
+
+[node name="CSGBox3D_Emissive" type="CSGBox3D" parent="." unique_id=1424398946]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0085654, 0)
+material = SubResource("StandardMaterial3D_emissive")

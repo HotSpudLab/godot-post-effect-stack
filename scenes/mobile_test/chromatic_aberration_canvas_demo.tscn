@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bkdgykejvwnt4"]
+
+[ext_resource type="Script" uid="uid://do8m0f4ng8d1s" path="res://addons/post_effect_resource/canvas_post_effect.gd" id="1_canvas"]
+[ext_resource type="Shader" uid="uid://ddvkgfgh42wlu" path="res://effects/chromatic_aberration/chromatic_aberration_canvas.gdshader" id="2_shader"]
+
+[sub_resource type="Environment" id="Environment_0y7lm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo7ya"]
+albedo_color = Color(0.32927996, 0.98, 0.16660002, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l1gxv"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ca"]
+shader = ExtResource("2_shader")
+shader_parameter/strength = 0.01
+shader_parameter/radial = 1.0
+
+[node name="DemoScene" type="Node3D" unique_id=1366062689]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1851058069]
+environment = SubResource("Environment_0y7lm")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2066008433]
+transform = Transform3D(0.8834104, -0.19274406, 0.427125, 0, 0.9114915, 0.41131887, -0.4686001, -0.36336336, 0.8052211, 0.9291299, 0.9033156, 2.099809)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2031585669]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=495659725]
+material = SubResource("StandardMaterial3D_bo7ya")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGBox3D" unique_id=168937204]
+transform = Transform3D(0.89886713, 0.4382213, 0, -0.42458913, 0.8709052, -0.2474838, -0.10845268, 0.22245505, 0.96889204, 1.4314307, 0.20140481, -0.70138025)
+material = SubResource("StandardMaterial3D_l1gxv")
+
+[node name="CanvasPostEffect" type="CanvasLayer" parent="." unique_id=1287266837]
+layer = 128
+script = ExtResource("1_canvas")
+effect_material = SubResource("ShaderMaterial_ca")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasPostEffect" unique_id=1671217272]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
