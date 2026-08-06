@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="PostEffectResource" format=3 uid="uid://c3p3mkwlw15bf"]
+
+[ext_resource type="Script" uid="uid://vxtvv0jbdlfj" path="res://addons/post_effect_resource/post_effect_resource.gd" id="1_0a7gy"]
+[ext_resource type="RDShaderFile" uid="uid://iac278o3wp62" path="res://effects/grayscale/grayscale.glsl" id="2_jgca5"]
+
+[resource]
+script = ExtResource("1_0a7gy")
+shader_file = ExtResource("2_jgca5")
+metadata/_custom_type_script = "uid://vxtvv0jbdlfj"

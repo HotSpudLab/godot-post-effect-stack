@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="GrainEffect" format=3 uid="uid://c7x8wap4q2r5s"]
+
+[ext_resource type="Script" uid="uid://buigr8rdh4uwn" path="res://effects/grain/grain.gd" id="1_3f4a5"]
+[ext_resource type="RDShaderFile" uid="uid://dxegf3krk8s66" path="res://effects/grain/grain.glsl" id="2_7g9h2"]
+
+[resource]
+script = ExtResource("1_3f4a5")
+intensity = 0.485
+shader_file = ExtResource("2_7g9h2")
+metadata/_custom_type_script = "uid://buigr8rdh4uwn"

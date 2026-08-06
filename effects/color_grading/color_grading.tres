@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ColorGradingEffect" format=3 uid="uid://bcfj4g3nkkpju"]
+
+[ext_resource type="Script" uid="uid://dg23576v0j8gp" path="res://effects/color_grading/color_grading.gd" id="1_i4g04"]
+[ext_resource type="Texture2D" uid="uid://c5c2i8heoxj70" path="res://effects/color_grading/lut_b.tres" id="1_t1buj"]
+[ext_resource type="Texture2D" uid="uid://o0oo4s08yj28" path="res://effects/color_grading/lut_g.tres" id="2_h1jsn"]
+[ext_resource type="Texture2D" uid="uid://c0k3xui7cqv0r" path="res://effects/color_grading/lut_r.tres" id="3_ff0ga"]
+[ext_resource type="RDShaderFile" uid="uid://d3p4jcwbe1hwc" path="res://effects/color_grading/color_grading.glsl" id="5_qjp2f"]
+
+[resource]
+script = ExtResource("1_i4g04")
+lut_r = ExtResource("3_ff0ga")
+lut_g = ExtResource("2_h1jsn")
+lut_b = ExtResource("1_t1buj")
+intensity = 0.93
+shader_file = ExtResource("5_qjp2f")
+metadata/_custom_type_script = "uid://dg23576v0j8gp"

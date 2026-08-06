@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EffectStackResource" format=3 uid="uid://bxcl2vndsn5nt"]
+
+[ext_resource type="Script" uid="uid://bdwiakekorvqd" path="res://addons/post_effect_resource/effect_stack_resource.gd" id="1_7d4v8"]
+[ext_resource type="Script" uid="uid://vxtvv0jbdlfj" path="res://addons/post_effect_resource/post_effect_resource.gd" id="1_nt1vj"]
+[ext_resource type="Resource" uid="uid://so88e5se4la" path="res://effects/vignette/vignette.tres" id="2_8b1c3"]
+[ext_resource type="Resource" uid="uid://cryoxq54esvku" path="res://effects/scanline/scanline.tres" id="3_2f5a9"]
+[ext_resource type="Resource" uid="uid://c7x8wap4q2r5s" path="res://effects/grain/grain.tres" id="4_9e2d1"]
+
+[resource]
+script = ExtResource("1_7d4v8")
+effects = Array[ExtResource("1_nt1vj")]([ExtResource("4_9e2d1"), ExtResource("3_2f5a9"), ExtResource("2_8b1c3")])

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bi0wphsxrmc1d"]
+
+[ext_resource type="Script" uid="uid://do8m0f4ng8d1s" path="res://addons/post_effect_resource/canvas_post_effect.gd" id="1_canvas"]
+[ext_resource type="Shader" uid="uid://cmaot53sothrn" path="res://effects/bloom/bloom_canvas.gdshader" id="2_shader"]
+
+[sub_resource type="Environment" id="Environment_0y7lm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo7ya"]
+albedo_color = Color(0, 1, 0.2833333, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bloom"]
+shader = ExtResource("2_shader")
+shader_parameter/threshold = 0.6
+shader_parameter/intensity = 1.2
+shader_parameter/radius = 0.02
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gbwx2"]
+emission_enabled = true
+emission = Color(1, 0.5, 0, 1)
+emission_energy_multiplier = 2.0
+
+[node name="DemoScene" type="Node3D" unique_id=1981090523]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1439684090]
+environment = SubResource("Environment_0y7lm")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1464090940]
+transform = Transform3D(0.8834104, -0.19274406, 0.427125, 0, 0.9114915, 0.41131887, -0.4686001, -0.36336336, 0.8052211, 0.9291299, 0.9033156, 2.099809)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=406655853]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=2123805494]
+material = SubResource("StandardMaterial3D_bo7ya")
+
+[node name="CanvasPostEffect" type="CanvasLayer" parent="." unique_id=1255436816]
+layer = 128
+script = ExtResource("1_canvas")
+effect_material = SubResource("ShaderMaterial_bloom")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasPostEffect" unique_id=934272380]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CSGBox3D_Emissive" type="CSGBox3D" parent="." unique_id=1123413185]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0085654, 0)
+material = SubResource("StandardMaterial3D_gbwx2")

@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dwbkapxy3xqdi"]
+
+[ext_resource type="Script" uid="uid://do8m0f4ng8d1s" path="res://addons/post_effect_resource/canvas_post_effect.gd" id="1_canvas"]
+[ext_resource type="Shader" uid="uid://b1700ced6xr7f" path="res://effects/vignette/vignette_canvas.gdshader" id="2_shader"]
+
+[sub_resource type="Environment" id="Environment_0y7lm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo7ya"]
+albedo_color = Color(0, 1, 0.2833333, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vignette"]
+shader = ExtResource("2_shader")
+shader_parameter/intensity = 0.5
+shader_parameter/smoothness = 0.3
+shader_parameter/vignette_color = Color(0, 0, 0, 1)
+
+[node name="DemoScene" type="Node3D" unique_id=1082665756]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=907255735]
+environment = SubResource("Environment_0y7lm")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1542230488]
+transform = Transform3D(0.8834104, -0.19274406, 0.427125, 0, 0.9114915, 0.41131887, -0.4686001, -0.36336336, 0.8052211, 0.9291299, 0.9033156, 2.099809)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1088619094]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=851938918]
+material = SubResource("StandardMaterial3D_bo7ya")
+
+[node name="CanvasPostEffect" type="CanvasLayer" parent="." unique_id=650907009]
+layer = 128
+script = ExtResource("1_canvas")
+effect_material = SubResource("ShaderMaterial_vignette")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasPostEffect" unique_id=1209179828]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
