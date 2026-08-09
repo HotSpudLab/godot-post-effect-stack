@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ChromaticAberrationEffect" format=3 uid="uid://cvky4jpgoxe5a"]
+
+[ext_resource type="Script" uid="uid://bvu8ggw5pnsai" path="res://effects/chromatic_aberration/chromatic_aberration.gd" id="1_h6ski"]
+[ext_resource type="RDShaderFile" uid="uid://cborhyuf8k6qy" path="res://effects/chromatic_aberration/chromatic_aberration.glsl" id="2_kae7f"]
+
+[resource]
+script = ExtResource("1_h6ski")
+strength = 0.0
+shader_file = ExtResource("2_kae7f")
+metadata/_custom_type_script = "uid://bvu8ggw5pnsai"

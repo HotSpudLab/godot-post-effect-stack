@@ -1,0 +1,71 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" uid="uid://do8m0f4ng8d1s" path="res://addons/post_effect_stack/canvas_post_effect.gd" id="1_canvas"]
+[ext_resource type="Shader" path="res://effects/color_grading/color_grading_canvas.gdshader" id="2_shader"]
+
+[sub_resource type="Gradient" id="Gradient_r"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = [Color(0, 0, 0, 1), Color(0.6, 0.3, 0.1, 1), Color(1, 0.8, 0.5, 1)]
+
+[sub_resource type="Gradient" id="Gradient_g"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = [Color(0, 0, 0, 1), Color(0.3, 0.4, 0.2, 1), Color(0.7, 0.6, 0.4, 1)]
+
+[sub_resource type="Gradient" id="Gradient_b"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = [Color(0, 0, 0, 1), Color(0.1, 0.1, 0.15, 1), Color(0.3, 0.25, 0.2, 1)]
+
+[sub_resource type="GradientTexture2D" id="LUT_r"]
+width = 256
+height = 1
+gradient = SubResource("Gradient_r")
+
+[sub_resource type="GradientTexture2D" id="LUT_g"]
+width = 256
+height = 1
+gradient = SubResource("Gradient_g")
+
+[sub_resource type="GradientTexture2D" id="LUT_b"]
+width = 256
+height = 1
+gradient = SubResource("Gradient_b")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_color_grading"]
+shader = ExtResource("2_shader")
+shader_parameter/intensity = 1.0
+shader_parameter/lut_r = SubResource("LUT_r")
+shader_parameter/lut_g = SubResource("LUT_g")
+shader_parameter/lut_b = SubResource("LUT_b")
+
+[sub_resource type="Environment" id="Environment_0y7lm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo7ya"]
+albedo_color = Color(0, 1, 0.2833333, 1)
+
+[node name="DemoScene" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_0y7lm")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.8834104, -0.19274406, 0.427125, 0, 0.9114915, 0.41131887, -0.4686001, -0.36336336, 0.8052211, 0.9291299, 0.9033156, 2.099809)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+material = SubResource("StandardMaterial3D_bo7ya")
+
+[node name="CanvasPostEffect" type="CanvasLayer" parent="."]
+layer = 128
+script = ExtResource("1_canvas")
+effect_material = SubResource("ShaderMaterial_color_grading")
+
+[node name="ColorRect" type="ColorRect" parent="CanvasPostEffect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 0.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 2

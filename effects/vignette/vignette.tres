@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="VignetteEffect" format=3 uid="uid://so88e5se4la"]
+
+[ext_resource type="Script" uid="uid://c6jduv2yykuvk" path="res://effects/vignette/vignette.gd" id="1_hckpy"]
+[ext_resource type="RDShaderFile" uid="uid://d0owt15dhloj5" path="res://effects/vignette/vignette.glsl" id="2_n6qhw"]
+
+[resource]
+script = ExtResource("1_hckpy")
+intensity = 1.355
+smoothness = 0.4
+color = Color(0, 0.30588236, 0.6431373, 1)
+shader_file = ExtResource("2_n6qhw")
+metadata/_custom_type_script = "uid://c6jduv2yykuvk"
