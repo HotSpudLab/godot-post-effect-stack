@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://e888ua0xkgey"
+path="res://.godot/imported/snapshot_copy.glsl-4f6e28a2a6f7096c1bcc85e712224a97.res"
+
+[deps]
+
+source_file="res://addons/post_effect_stack/shaders/snapshot_copy.glsl"
+dest_files=["res://.godot/imported/snapshot_copy.glsl-4f6e28a2a6f7096c1bcc85e712224a97.res"]
+
+[params]
+

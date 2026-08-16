@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://bnop257metxx4"]
+
+[ext_resource type="Resource" uid="uid://cvky4jpgoxe5a" path="res://effects/chromatic_aberration/chromatic_aberration.tres" id="1_4bv0h"]
+[ext_resource type="Script" uid="uid://da2nfn6i4sxsw" path="res://addons/post_effect_stack/post_effect_runner.gd" id="2_utj4w"]
+
+[sub_resource type="Environment" id="Environment_0y7lm"]
+
+[sub_resource type="CompositorEffect" id="CompositorEffect_hro3w"]
+resource_local_to_scene = false
+resource_name = ""
+enabled = true
+effect_callback_type = 4
+needs_motion_vectors = false
+script = ExtResource("2_utj4w")
+effect_resource = ExtResource("1_4bv0h")
+metadata/_custom_type_script = "uid://da2nfn6i4sxsw"
+
+[sub_resource type="Compositor" id="Compositor_te36y"]
+compositor_effects = Array[CompositorEffect]([SubResource("CompositorEffect_hro3w")])
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bo3ya"]
+albedo_color = Color(0, 1, 0.2833333, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_edge"]
+albedo_color = Color(0.92, 0.94, 0.98, 1)
+
+[node name="DemoScene" type="Node3D" unique_id=568931758]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2040256825]
+environment = SubResource("Environment_0y7lm")
+compositor = SubResource("Compositor_te36y")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1577595802]
+transform = Transform3D(0.8834104, -0.19274406, 0.427125, 0, 0.9114915, 0.41131887, -0.4686001, -0.36336336, 0.8052211, 0.9291299, 0.9033156, 2.099809)
+current = true
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=493206898]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1424398945]
+material = SubResource("StandardMaterial3D_bo3ya")
+
+[node name="EdgeMarkers" type="Node3D" parent="Camera3D"]
+
+[node name="TopLeft" type="CSGBox3D" parent="Camera3D/EdgeMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 1.85, -4)
+size = Vector3(0.8, 0.8, 0.8)
+material = SubResource("StandardMaterial3D_edge")
+
+[node name="TopRight" type="CSGBox3D" parent="Camera3D/EdgeMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, 1.85, -4)
+size = Vector3(0.8, 0.8, 0.8)
+material = SubResource("StandardMaterial3D_edge")
+
+[node name="BottomLeft" type="CSGBox3D" parent="Camera3D/EdgeMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, -1.85, -4)
+size = Vector3(0.8, 0.8, 0.8)
+material = SubResource("StandardMaterial3D_edge")
+
+[node name="BottomRight" type="CSGBox3D" parent="Camera3D/EdgeMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, -1.85, -4)
+size = Vector3(0.8, 0.8, 0.8)
+material = SubResource("StandardMaterial3D_edge")
+
+[node name="MidLeft" type="CSGBox3D" parent="Camera3D/EdgeMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9, 0, -4)
+size = Vector3(0.8, 0.8, 0.8)
+material = SubResource("StandardMaterial3D_edge")
+
+[node name="MidRight" type="CSGBox3D" parent="Camera3D/EdgeMarkers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9, 0, -4)
+size = Vector3(0.8, 0.8, 0.8)
+material = SubResource("StandardMaterial3D_edge")

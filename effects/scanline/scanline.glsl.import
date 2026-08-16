@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://856ytswogorr"
+path="res://.godot/imported/scanline.glsl-75752f947b45c6e8d82a8f6ce329ea5f.res"
+
+[deps]
+
+source_file="res://effects/scanline/scanline.glsl"
+dest_files=["res://.godot/imported/scanline.glsl-75752f947b45c6e8d82a8f6ce329ea5f.res"]
+
+[params]
+

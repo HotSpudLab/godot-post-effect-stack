@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="ScanlineEffect" format=3 uid="uid://cryoxq54esvku"]
+
+[ext_resource type="Script" uid="uid://nurtbqlq05cs" path="res://effects/scanline/scanline.gd" id="1_6f2ma"]
+[ext_resource type="RDShaderFile" uid="uid://856ytswogorr" path="res://effects/scanline/scanline.glsl" id="2_4pgio"]
+
+[resource]
+script = ExtResource("1_6f2ma")
+shader_file = ExtResource("2_4pgio")
+metadata/_custom_type_script = "uid://nurtbqlq05cs"
