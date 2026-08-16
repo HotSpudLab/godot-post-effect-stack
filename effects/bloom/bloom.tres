@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="BloomEffect" format=3 uid="uid://b7ngfjnx1qawp"]
+
+[ext_resource type="Script" uid="uid://bkk0wsi65ci3g" path="res://effects/bloom/bloom.gd" id="1_3g8h2"]
+
+[resource]
+script = ExtResource("1_3g8h2")
+threshold = 1.6
+intensity = 5.76
+blur_radius = 4.68
+blur_passes = 10
+metadata/_custom_type_script = "uid://uvmdu24gycvva"

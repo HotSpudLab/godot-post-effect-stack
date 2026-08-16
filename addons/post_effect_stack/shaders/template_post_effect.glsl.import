@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://cw3vxuredhiip"
+path="res://.godot/imported/template_post_effect.glsl-523091273b96261ff45d1b1797f5f1a0.res"
+
+[deps]
+
+source_file="res://addons/post_effect_stack/shaders/template_post_effect.glsl"
+dest_files=["res://.godot/imported/template_post_effect.glsl-523091273b96261ff45d1b1797f5f1a0.res"]
+
+[params]
+
