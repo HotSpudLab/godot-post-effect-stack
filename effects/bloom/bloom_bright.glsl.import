@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://bw8x0h6mmq0l0"
+path="res://.godot/imported/bloom_bright.glsl-28caa5a9918c12f5e2bbd4b602364ff7.res"
+
+[deps]
+
+source_file="res://effects/bloom/bloom_bright.glsl"
+dest_files=["res://.godot/imported/bloom_bright.glsl-28caa5a9918c12f5e2bbd4b602364ff7.res"]
+
+[params]
+

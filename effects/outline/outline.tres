@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="OutlineEffect" format=3 uid="uid://burfhu3yqe6dv"]
+
+[ext_resource type="Script" uid="uid://cy1e2ys16fj34" path="res://effects/outline/outline.gd" id="1_2e6c4"]
+[ext_resource type="RDShaderFile" uid="uid://cqes6w2ynios" path="res://effects/outline/outline.glsl" id="2_7f1a3"]
+
+[resource]
+script = ExtResource("1_2e6c4")
+depth_threshold = 0.005
+shader_file = ExtResource("2_7f1a3")
+needs_depth = true
+metadata/_custom_type_script = "uid://z6hmmcckkmsnp"

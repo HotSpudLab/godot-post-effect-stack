@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="PixelateEffect" format=3 uid="uid://eu51ffcyc0vv"]
+
+[ext_resource type="Script" uid="uid://bg11x71qekt78" path="res://effects/pixelate/pixelate.gd" id="1_6b7c8"]
+[ext_resource type="RDShaderFile" uid="uid://c4urhefmtdvkg" path="res://effects/pixelate/pixelate.glsl" id="2_9d0e1"]
+
+[resource]
+script = ExtResource("1_6b7c8")
+block_size = 9
+shader_file = ExtResource("2_9d0e1")
+metadata/_custom_type_script = "uid://fcgwkaxyxrpyz"
