@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://dxegf3krk8s66"
+path="res://.godot/imported/grain.glsl-7910aebddefab357ab737ea57362a119.res"
+
+[deps]
+
+source_file="res://effects/grain/grain.glsl"
+dest_files=["res://.godot/imported/grain.glsl-7910aebddefab357ab737ea57362a119.res"]
+
+[params]
+

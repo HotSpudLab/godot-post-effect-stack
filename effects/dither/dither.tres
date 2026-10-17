@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DitherEffect" format=3 uid="uid://bs5lbsjludgi0"]
+
+[ext_resource type="Script" uid="uid://cucmn7erc28ou" path="res://effects/dither/dither.gd" id="1_8a4b2"]
+[ext_resource type="RDShaderFile" uid="uid://b0y00xdwuyrvy" path="res://effects/dither/dither.glsl" id="2_9c3d1"]
+
+[resource]
+script = ExtResource("1_8a4b2")
+strength = 0.205
+shader_file = ExtResource("2_9c3d1")
+metadata/_custom_type_script = "uid://gpqh9abzv94gm"

@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://b0y00xdwuyrvy"
+path="res://.godot/imported/dither.glsl-862bfad61bf1e9c58c6b17f8dbe3a34d.res"
+
+[deps]
+
+source_file="res://effects/dither/dither.glsl"
+dest_files=["res://.godot/imported/dither.glsl-862bfad61bf1e9c58c6b17f8dbe3a34d.res"]
+
+[params]
+

@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://dp7eghl0oarjy"
+path="res://.godot/imported/bloom_blur.glsl-57b4945edc7429d7a7c5c681231373cf.res"
+
+[deps]
+
+source_file="res://effects/bloom/bloom_blur.glsl"
+dest_files=["res://.godot/imported/bloom_blur.glsl-57b4945edc7429d7a7c5c681231373cf.res"]
+
+[params]
+

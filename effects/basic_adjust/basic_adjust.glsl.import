@@ -1,0 +1,14 @@
+[remap]
+
+importer="glsl"
+type="RDShaderFile"
+uid="uid://bj2tu07fg713v"
+path="res://.godot/imported/basic_adjust.glsl-ba79e782fa2558ab60612e2e7f3739cb.res"
+
+[deps]
+
+source_file="res://effects/basic_adjust/basic_adjust.glsl"
+dest_files=["res://.godot/imported/basic_adjust.glsl-ba79e782fa2558ab60612e2e7f3739cb.res"]
+
+[params]
+
