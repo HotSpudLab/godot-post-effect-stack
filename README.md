@@ -300,6 +300,20 @@ No other classes were renamed: `PostEffectRunner`, `EffectStackResource`, and `E
 
 ---
 
+## Finished looks (sold separately)
+
+Visual Style Kits are complete, adjustable looks built on Post Effect Stack.
+Each Kit includes its own effects, an editable sample scene, ready-to-use
+Recipes and a tested copy of Core.
+
+- **[Folk Print](https://hot-spud-lab.itch.io/folk-print)** — a folk-illustration
+  look with a small colour palette, painted edges and decorative patterns.
+  For Forward+ on PC. Available on itch.io.
+
+Core works on its own; Kits are optional.
+
+---
+
 ## License
 
 MIT License. See the `LICENSE` file.
